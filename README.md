@@ -9,13 +9,16 @@ en España, como instrumento de promoción de los alimentos y bebidas españoles
 
 - `index.html` — página única con el shell de la tienda.
 - `assets/app.js` — router, carrito, checkout, cuenta de cliente y lógica de la tienda.
-- `assets/art.js` — sistema de ilustración/visuales del sitio (escenas, packshots, hero).
+- `assets/art.js` — iconos, logotipo e ilustración vectorial (diagramas, variedades, recetas).
+- `assets/photo.js` — sustituye packshots, portada y escenas por la fotografía renderizada en 3D.
 - `assets/data.js`, `assets/data2.js` — catálogo de productos, reseñas, contenidos del dossier.
 - `assets/dossier.js` — sección "Dossier del caso" (CANVAS, árbol del sitio, formularios,
   logística, hosting, SEO) que cubre los apartados con asterisco del Anexo 1.
 - `assets/i18n.js`, `assets/i18n2.js` — textos de interfaz en francés, español e inglés.
 - `assets/styles.css` — sistema de diseño (paleta, tipografía, componentes).
-- `assets/img/`, `assets/creatives/` — imágenes del sitio y creatividades de campaña.
+- `assets/photo/` — fotografía de producto y las ocho fases del proceso, renderizadas con un
+  estudio 3D propio (three.js): seis bodegones, la portada y dos fotogramas por fase que la
+  página funde entre sí según avanza el scroll.
 
 ## Cómo verlo
 

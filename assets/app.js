@@ -616,7 +616,7 @@
   var USE_ART = { classique: ["scene", 7, .75], premium: ["variety", "hojiblanca"], cadeau: ["dish", "salmorejo"], bidon: ["scene", 7, .75], verres: ["variety", "picuda"], carnet: ["dish", "tomate"] };
   var pdpState = { view: 0, qty: 1, tab: "desc", id: null };
   function pdpView(p, v) {
-    if (v === 1) return A.pack(p.id, { vb: DETAIL_VB[p.id], label: L(p.name) });
+    if (v === 1) return A.pack(p.id, { vb: "detail", label: L(p.name) });
     if (v === 2) {
       var u = USE_ART[p.id];
       if (u[0] === "variety") return A.varietySpot(u[1]);
