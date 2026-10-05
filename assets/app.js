@@ -378,11 +378,11 @@
         '<a class="scroll-cue" href="#story" data-scroll="story"><i></i>' + esc(t("hero.scroll")) + "</a>" +
       "</div></section>" +
 
-      '<div class="wrap"><div class="trust">' + [["seal", "trust.1"], ["clock", "trust.2"], ["truck", "trust.3"], ["shield", "trust.4"]].map(function (x) {
+      '<div class="tone-cream"><div class="wrap"><div class="trust">' + [["seal", "trust.1"], ["clock", "trust.2"], ["truck", "trust.3"], ["shield", "trust.4"]].map(function (x) {
         return '<div class="trust-i"><span class="ti">' + ic(x[0]) + "</span><span><strong>" + esc(t(x[1])) + "</strong><span>" + esc(t(x[1] + "s")) + "</span></span></div>";
-      }).join("") + "</div></div>" +
+      }).join("") + "</div></div></div>" +
 
-      '<section class="story" id="story">' +
+      '<section class="story tone-mint" id="story">' +
         '<div class="wrap story-intro"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("story.k")) + "</span><h2>" + esc(t("story.h2")) + '</h2><p class="lede">' + esc(t("story.p")) + "</p></div></div>" +
         '<div class="story-track" id="track" style="height:calc(100vh + ' + N + ' * 85vh)">' +
           '<div class="wrap story-pin">' +
@@ -406,13 +406,13 @@
         "</div>" +
       "</section>" +
 
-      '<section class="section"><div class="wrap">' +
+      '<section class="section tone-cream"><div class="wrap">' +
         '<div class="sec-head"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("home.shop.eyebrow")) + "</span><h2>" + esc(t("home.shop.h2")) + '</h2><p class="lede">' + esc(t("home.shop.p")) + "</p></div>" +
           '<a class="link-arrow" href="#/produits">' + esc(t("home.shop.all")) + ic("arrow") + "</a></div>" +
         '<div class="grid g-4">' + D.products.map(productCard).join("") + "</div>" +
       "</div></section>" +
 
-      '<section class="section" style="background:var(--sage-50); padding-block:clamp(56px,7vw,96px)"><div class="wrap">' +
+      '<section class="section tone-deep" style="padding-block:clamp(56px,7vw,96px)"><div class="wrap">' +
         '<div class="sec-head"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("stats.k")) + "</span><h2>" + esc(t("stats.h2")) + "</h2></div></div>" +
         '<div class="stats">' + [["olive", 20, "+", "home.stat1", "stat.d1"], ["store", 19, "", "home.stat2", "stat.d2"], ["tree", 60000, "", "home.stat3", "stat.d3"], ["seal", 1981, "", "home.stat4", "stat.d4"]].map(function (s) {
           return '<div class="stat" tabindex="0"><span class="si">' + ic(s[0]) + '</span><div class="n tnum" data-count="' + s[1] + '" data-prefix="' + s[2] + '"' + (s[1] === 1981 ? ' data-plain="1"' : "") + ">" + s[2] + (s[1] === 1981 ? s[1] : num(s[1])) + "</div>" +
@@ -420,7 +420,7 @@
         }).join("") + "</div>" +
       "</div></section>" +
 
-      '<section class="section" style="padding-bottom:clamp(40px,5vw,64px)"><div class="wrap">' +
+      '<section class="section tone-mint" style="padding-bottom:clamp(40px,5vw,64px)"><div class="wrap">' +
         '<div class="sec-head"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("rv.k")) + "</span><h2>" + esc(t("rv.h2")) + "</h2></div>" +
           '<span class="rate" style="font-size:.9rem">' + stars(5) + "<strong>" + esc(t("rv.avg")) + "</strong></span></div></div>" +
         '<div class="marquee" aria-label="' + esc(t("rv.k")) + '"><div class="mq-track">' +
@@ -428,14 +428,14 @@
         "</div></div>" +
       "</section>" +
 
-      '<section class="section" style="padding-top:clamp(30px,4vw,56px)"><div class="wrap"><div class="split">' +
+      '<section class="section tone-deep"><div class="wrap"><div class="split">' +
         '<div class="art-frame" id="tour-art"></div>' +
         '<div class="stack g16"><span class="eyebrow">' + esc(t("home.tour.eyebrow")) + "</span><h2>" + esc(t("home.tour.h2")) + "</h2>" +
           "<p class=\"muted\">" + esc(t("home.tour.p")) + "</p>" +
           '<div><a class="btn" href="#/oleotourisme">' + esc(t("home.tour.cta")) + ic("arrow", "ic-arrow") + "</a></div></div>" +
       "</div></div></section>" +
 
-      '<section class="section" id="newsletter" style="padding-top:0"><div class="wrap"><div class="nl">' +
+      '<section class="section tone-cream" id="newsletter"><div class="wrap"><div class="nl">' +
         '<svg class="branch" viewBox="0 0 340 200" aria-hidden="true">' + A.oliveBranch(10, 150, 2.6, -18, true) + "</svg>" +
         '<div class="split" style="position:relative">' +
           '<div class="stack g12"><span class="eyebrow">' + esc(t("home.lead.eyebrow")) + "</span><h2>" + esc(t("home.lead.h2")) + '</h2><p class="lede">' + esc(t("home.lead.p")) + "</p></div>" +
@@ -577,7 +577,7 @@
           return '<div class="pillar stack g12"><span class="pi">' + ic(s[2]) + "</span><h3>" + esc(t(s[0])) + '</h3><p class="muted">' + esc(t(s[1])) + "</p></div>";
         }).join("") + "</div>" +
       "</div></section>" +
-      '<section class="section" style="background:var(--sage-50)"><div class="wrap stack g24">' +
+      '<section class="section tone-mint"><div class="wrap stack g24">' +
         '<div class="stack g12"><span class="eyebrow">' + esc(t("aop.var.k")) + "</span><h2>" + esc(t("aop.varieties.h")) + "</h2></div>" +
         '<div class="grid g-3">' + vs.map(function (v) {
           return '<article class="vcard">' + A.varietySpot(v[0]) + '<div class="b"><h3>' + esc(t(v[1])) + '</h3><p class="small muted">' + esc(t(v[2])) + "</p></div></article>";

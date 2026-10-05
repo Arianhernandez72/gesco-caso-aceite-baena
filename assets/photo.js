@@ -1,14 +1,14 @@
-/* Rendered photography. Replaces the vector packshots, hero and process scenes
-   with the stills produced by the 3D studio, keeping the same call signatures so
-   the rest of the site is unchanged. */
+/* Photography. Product packshots and the hero are real-looking photographs of the
+   bottle in its Andalusian setting; the eight process scenes are still the 3D studio
+   stills. Keeps the same call signatures so the rest of the site is unchanged. */
 (function () {
   "use strict";
   var A = window.ART, P = "assets/photo/";
 
   /* ---- product packshots ---- */
   var PACK = { classique: "p-classique", premium: "p-premium", cadeau: "p-cadeau", bidon: "p-bidon", verres: "p-verres", carnet: "p-carnet" };
-  /* The detail view is the same still, scaled up and panned to the label. */
-  var DETAIL = { classique: "52% 40%", premium: "50% 56%", cadeau: "58% 46%", bidon: "48% 48%", verres: "50% 52%", carnet: "52% 44%" };
+  /* The detail view is the same photo, scaled up and panned to its subject. */
+  var DETAIL = { classique: "46% 48%", premium: "62% 42%", cadeau: "40% 46%", bidon: "70% 52%", verres: "50% 58%", carnet: "62% 62%" };
 
   A.pack = function (id, o) {
     o = o || {};
@@ -20,14 +20,15 @@
       '" loading="lazy" decoding="async"' + style + ">";
   };
 
-  /* ---- hero ---- */
+  /* ---- hero: wide frame on desktop, a tighter crop of the same photo on phones ---- */
   A.hero = function () {
-    return '<img class="hero-art" src="' + P + 'hero.jpg" alt="Bouteille d\'huile d\'olive AOP Baena sur une terrasse devant l\'oliveraie andalouse" fetchpriority="high" decoding="async">';
+    return '<picture><source media="(max-width:820px)" srcset="' + P + 'hero-m.jpg">' +
+      '<img class="hero-art" src="' + P + 'hero.jpg" alt="Bouteille d\'huile d\'olive AOP Baena, olives et pain sur une terrasse face à un village blanc et aux oliveraies d\'Andalousie" fetchpriority="high" decoding="async"></picture>';
   };
 
   /* ---- a wide landscape band ---- */
   A.landscape = function (cls) {
-    return '<img class="' + (cls || "land") + '" src="' + P + 'hero.jpg" alt="Oliveraie de Baena" loading="lazy" decoding="async">';
+    return '<img class="' + (cls || "land") + '" src="' + P + 'hero-m.jpg" alt="Terrasse andalouse face au village et aux oliveraies de Baena" loading="lazy" decoding="async">';
   };
 
   /* ---- the eight process stages: two frames crossfaded by scroll ---- */
