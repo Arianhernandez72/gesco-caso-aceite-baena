@@ -2,9 +2,6 @@
    (sage = surfaces, leaf = accents, olive = action, deep = footer and dark bands); home
    sections alternate light green, cream and deep olive bands. The home page
    pins an illustrated stage while the eight steps of the oil's journey scroll past. */
-/* Layout: light ivory page; greens are layered from sage to deep olive and used by role
-   (sage = surfaces, leaf = accents, olive = action, deep = footer only). The home page
-   pins an illustrated stage while the eight steps of the oil's journey scroll past. */
 :root{
   --bg:#F8F5EC; --surface:#FFFDF8; --surface-2:#F1F2E6;
   --sage-50:#F3F5EA; --sage-100:#E5EBD5; --sage-200:#CFDAB5; --sage-300:#B5C696;
