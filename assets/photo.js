@@ -1,5 +1,6 @@
 /* Photography. The hero is a photograph of the bottle in its Andalusian setting;
-   product packshots and the process scenes are 3D studio stills. Keeps the same call signatures so the rest of the site is unchanged. */
+   the mill visit uses photographs too; product packshots and the process scenes are
+   3D studio stills. Keeps the same call signatures so the rest of the site is unchanged. */
 (function () {
   "use strict";
   var A = window.ART, P = "assets/photo/";
@@ -28,6 +29,15 @@
   /* ---- a wide landscape band ---- */
   A.landscape = function (cls) {
     return '<img class="' + (cls || "land") + '" src="' + P + 'hero-m.jpg" alt="Terrasse andalouse face au village et aux oliveraies de Baena" loading="lazy" decoding="async">';
+  };
+
+  /* ---- the mill visit: photographs of the olive grove and a tasting on the terrace ---- */
+  var TOUR = {
+    cata: "Dégustation d'huile AOP Baena sur une terrasse face au village",
+    olivar: "Oliviers centenaires dans les collines de Baena"
+  };
+  A.tourPhoto = function (id) {
+    return '<img src="' + P + "t-" + id + '.jpg" alt="' + TOUR[id].replace(/"/g, "&quot;") + '" loading="lazy" decoding="async">';
   };
 
   /* ---- the eight process stages: two frames crossfaded by scroll ---- */

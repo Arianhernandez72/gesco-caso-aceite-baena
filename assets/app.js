@@ -404,7 +404,7 @@
       "</section>" +
 
       '<section class="section tone-deep"><div class="wrap"><div class="split">' +
-        '<div class="art-frame" id="tour-art"></div>' +
+        '<div class="art-frame">' + A.tourPhoto("cata") + "</div>" +
         '<div class="stack g16"><span class="eyebrow">' + esc(t("home.tour.eyebrow")) + "</span><h2>" + esc(t("home.tour.h2")) + "</h2>" +
           "<p class=\"muted\">" + esc(t("home.tour.p")) + "</p>" +
           '<div><a class="btn" href="#/oleotourisme">' + esc(t("home.tour.cta")) + ic("arrow", "ic-arrow") + "</a></div></div>" +
@@ -428,7 +428,6 @@
 
   function wireHome() {
     wireLeadForm("lead-home", "newsletter");
-    var ta = $("#tour-art"); if (ta) A.mountScene(ta, 3, .6);
     $$("[data-scroll]").forEach(function (a) {
       a.addEventListener("click", function (e) {
         e.preventDefault();
@@ -863,7 +862,7 @@
   function viewTour() {
     return '<section class="section"><div class="wrap stack g32">' + crumb(t("tour.title")) +
       '<div class="stack g12 measure"><h1>' + esc(t("tour.h1")) + '</h1><p class="lede">' + esc(t("tour.lede")) + "</p></div>" +
-      '<div class="grid g-2"><div class="art-frame" data-scene-host="0" data-t=".9"></div><div class="art-frame" data-scene-host="4" data-t=".7"></div></div>' +
+      '<div class="grid g-2"><div class="art-frame">' + A.tourPhoto("olivar") + '</div><div class="art-frame">' + A.tourPhoto("cata") + "</div></div>" +
       '<div class="split" style="align-items:start">' +
         '<div class="stack g16"><h3>' + esc(t("tour.what")) + '</h3><ol class="stack g12" style="padding:0;margin:0;list-style:none">' +
           ["tour.w1", "tour.w2", "tour.w3", "tour.w4"].map(function (k, i) {
