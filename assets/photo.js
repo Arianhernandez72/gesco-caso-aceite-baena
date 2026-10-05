@@ -1,14 +1,13 @@
-/* Photography. Product packshots and the hero are real-looking photographs of the
-   bottle in its Andalusian setting; the eight process scenes are still the 3D studio
-   stills. Keeps the same call signatures so the rest of the site is unchanged. */
+/* Photography. The hero is a photograph of the bottle in its Andalusian setting;
+   product packshots and the process scenes are 3D studio stills. Keeps the same call signatures so the rest of the site is unchanged. */
 (function () {
   "use strict";
   var A = window.ART, P = "assets/photo/";
 
   /* ---- product packshots ---- */
   var PACK = { classique: "p-classique", premium: "p-premium", cadeau: "p-cadeau", bidon: "p-bidon", verres: "p-verres", carnet: "p-carnet" };
-  /* The detail view is the same photo, scaled up and panned to its subject. */
-  var DETAIL = { classique: "46% 48%", premium: "62% 42%", cadeau: "40% 46%", bidon: "70% 52%", verres: "50% 58%", carnet: "62% 62%" };
+  /* The detail view is the same still, scaled up and panned to the label. */
+  var DETAIL = { classique: "52% 40%", premium: "50% 56%", cadeau: "58% 46%", bidon: "48% 48%", verres: "50% 52%", carnet: "52% 44%" };
 
   A.pack = function (id, o) {
     o = o || {};

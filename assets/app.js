@@ -112,7 +112,7 @@
       menuLink("#/produits", "store", t("mega.all"), t("shop.lede").split(".")[0]) +
       menuLink("#/produit/verres", "glass", t("mega.acc"), L(findItem("verres").name)) +
       menuLink("#/produit/cadeau", "gift", t("mega.gifts"), L(findItem("cadeau").name)) +
-      menuLink("#/#story", "leaf", t("mega.process"), t("story.h2")) +
+      menuLink("#/aop-baena", "seal", t("nav.aop"), t("nav.aop.s")) +
       "</div></div>";
   }
   function menuLink(href, icon, title, sub) {
@@ -356,9 +356,8 @@
   }
 
   /* ================================================================ home */
-  var STEP_ICONS = ["calendar", "tree", "clock", "drop", "thermo", "scale", "seal", "sparkle"];
   function viewHome() {
-    var N = A.sceneCount, reviews = allReviews();
+    var reviews = allReviews();
     var rvCard = function (r, hidden) {
       var initials = r.n.split(/[\s&]+/).filter(Boolean).slice(0, 2).map(function (w) { return w[0]; }).join("");
       return '<article class="rv"' + (hidden ? ' aria-hidden="true"' : "") + ">" + stars(r.r) + "<p>« " + esc(L(r.t)) + " »</p>" +
@@ -372,41 +371,17 @@
           "<h1>" + esc(t("hero.h1")) + "</h1>" +
           '<p class="lede">' + esc(t("hero.p")) + "</p>" +
           '<div class="row g12"><a class="btn" href="#/produits">' + esc(t("hero.cta")) + ic("arrow", "ic-arrow") + "</a>" +
-            '<a class="btn btn-ghost" href="#story" data-scroll="story">' + ic("leaf") + esc(t("hero.scroll")) + "</a></div>" +
+            '<a class="btn btn-ghost" href="#/aop-baena">' + ic("seal") + esc(t("nav.aop")) + "</a></div>" +
           '<div class="hero-proof"><span>' + ic("seal") + esc(t("hero.b2")) + "</span><span>" + ic("tree") + esc(t("hero.b1")) + "</span><span>" + ic("truck") + esc(t("hero.b3")) + "</span></div>" +
         "</div></div></div>" +
-        '<a class="scroll-cue" href="#story" data-scroll="story"><i></i>' + esc(t("hero.scroll")) + "</a>" +
+        '<a class="scroll-cue" href="#boutique" data-scroll="boutique"><i></i>' + esc(t("home.shop.eyebrow")) + "</a>" +
       "</div></section>" +
 
       '<div class="tone-cream"><div class="wrap"><div class="trust">' + [["seal", "trust.1"], ["clock", "trust.2"], ["truck", "trust.3"], ["shield", "trust.4"]].map(function (x) {
         return '<div class="trust-i"><span class="ti">' + ic(x[0]) + "</span><span><strong>" + esc(t(x[1])) + "</strong><span>" + esc(t(x[1] + "s")) + "</span></span></div>";
       }).join("") + "</div></div></div>" +
 
-      '<section class="story tone-mint" id="story">' +
-        '<div class="wrap story-intro"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("story.k")) + "</span><h2>" + esc(t("story.h2")) + '</h2><p class="lede">' + esc(t("story.p")) + "</p></div></div>" +
-        '<div class="story-track" id="track" style="height:calc(100vh + ' + N + ' * 85vh)">' +
-          '<div class="wrap story-pin">' +
-            '<div class="stage" id="stage">' +
-              Array.apply(null, Array(N)).map(function (_, i) { return '<div class="layer' + (i === 0 ? " on" : "") + '" data-layer="' + i + '"></div>'; }).join("") +
-              '<div class="stage-num"><b id="snum">01</b><span>/ 0' + N + "</span></div>" +
-              '<div class="stage-bar"><i id="sbar"></i></div>' +
-            "</div>" +
-            '<div class="steps-col"><div class="step-texts">' +
-              Array.apply(null, Array(N)).map(function (_, i) {
-                var k = "s" + (i + 1);
-                return '<div class="step-t' + (i === 0 ? " on" : "") + '" data-step="' + i + '"><span class="k">' + esc(t(k + ".k")) + "</span><h3>" + esc(t(k + ".h")) + "</h3><p>" + esc(t(k + ".p")) + "</p>" +
-                  '<span class="chip">' + ic(STEP_ICONS[i]) + esc(t(k + ".c")) + "</span>" +
-                  (i === N - 1 ? '<a class="btn" href="#/produits" style="align-self:flex-start">' + esc(t("s8.cta")) + ic("arrow", "ic-arrow") + "</a>" : "") + "</div>";
-              }).join("") + "</div>" +
-              '<ol class="rail">' + Array.apply(null, Array(N)).map(function (_, i) {
-                return '<li><button data-goto="' + i + '"' + (i === 0 ? ' class="on"' : "") + "><b>0" + (i + 1) + "</b>" + esc(t("s" + (i + 1) + ".k").split("·").pop().trim()) + "</button></li>";
-              }).join("") + "</ol>" +
-            "</div>" +
-          "</div>" +
-        "</div>" +
-      "</section>" +
-
-      '<section class="section tone-cream"><div class="wrap">' +
+      '<section class="section tone-mint" id="boutique"><div class="wrap">' +
         '<div class="sec-head"><div class="stack g12 measure"><span class="eyebrow">' + esc(t("home.shop.eyebrow")) + "</span><h2>" + esc(t("home.shop.h2")) + '</h2><p class="lede">' + esc(t("home.shop.p")) + "</p></div>" +
           '<a class="link-arrow" href="#/produits">' + esc(t("home.shop.all")) + ic("arrow") + "</a></div>" +
         '<div class="grid g-4">' + D.products.map(productCard).join("") + "</div>" +
@@ -1182,7 +1157,7 @@
       return;
     }
     closeSheets(); closeDD();
-    if (hsh === "#/#story") { location.hash = "#/"; setTimeout(function () { var s = document.getElementById("story"); if (s) s.scrollIntoView(); }, 60); return; }
+    if (hsh === "#/#story") { location.hash = "#/"; return; }
     render(); window.scrollTo(0, 0);
   });
   paintHeader(); paintFooter(); render();
