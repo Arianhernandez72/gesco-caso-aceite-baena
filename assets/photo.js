@@ -4,6 +4,8 @@
 (function () {
   "use strict";
   var A = window.ART, P = "assets/photo/";
+  /* Bump V whenever a photo changes so browsers and GitHub Pages' cache fetch the new file. */
+  var V = "?v=20261006";
 
   /* ---- product packshots ---- */
   var PACK = { classique: "p-classique", premium: "p-premium", cadeau: "p-cadeau", bidon: "p-bidon", verres: "p-verres", carnet: "p-carnet" };
@@ -16,19 +18,19 @@
     var cls = "pack" + (o.cls ? " " + o.cls : "");
     var style = "";
     if (o.vb === "detail") { style = ' style="object-fit:cover;transform:scale(1.85);transform-origin:' + (DETAIL[id] || "50% 45%") + '"'; }
-    return '<img class="' + cls + '" src="' + P + f + '.jpg" alt="' + (o.label || "").replace(/"/g, "&quot;") +
+    return '<img class="' + cls + '" src="' + P + f + '.jpg' + V + '" alt="' + (o.label || "").replace(/"/g, "&quot;") +
       '" loading="lazy" decoding="async"' + style + ">";
   };
 
   /* ---- hero: wide frame on desktop, a tighter crop of the same photo on phones ---- */
   A.hero = function () {
-    return '<picture><source media="(max-width:820px)" srcset="' + P + 'hero-m.jpg">' +
-      '<img class="hero-art" src="' + P + 'hero.jpg" alt="Bouteille d\'huile d\'olive AOP Baena, olives et pain sur une terrasse face à un village blanc et aux oliveraies d\'Andalousie" fetchpriority="high" decoding="async"></picture>';
+    return '<picture><source media="(max-width:820px)" srcset="' + P + 'hero-m.jpg' + V + '">' +
+      '<img class="hero-art" src="' + P + 'hero.jpg' + V + '" alt="Bouteille d\'huile d\'olive AOP Baena, olives et pain sur une terrasse face à un village blanc et aux oliveraies d\'Andalousie" fetchpriority="high" decoding="async"></picture>';
   };
 
   /* ---- a wide landscape band ---- */
   A.landscape = function (cls) {
-    return '<img class="' + (cls || "land") + '" src="' + P + 'hero-m.jpg" alt="Terrasse andalouse face au village et aux oliveraies de Baena" loading="lazy" decoding="async">';
+    return '<img class="' + (cls || "land") + '" src="' + P + 'hero-m.jpg' + V + '" alt="Terrasse andalouse face au village et aux oliveraies de Baena" loading="lazy" decoding="async">';
   };
 
   /* ---- the mill visit: photographs of the olive grove and a tasting on the terrace ---- */
@@ -37,7 +39,7 @@
     olivar: "Oliviers centenaires dans les collines de Baena"
   };
   A.tourPhoto = function (id) {
-    return '<img src="' + P + "t-" + id + '.jpg" alt="' + TOUR[id].replace(/"/g, "&quot;") + '" loading="lazy" decoding="async">';
+    return '<img src="' + P + "t-" + id + '.jpg' + V + '" alt="' + TOUR[id].replace(/"/g, "&quot;") + '" loading="lazy" decoding="async">';
   };
 
   /* ---- the eight process stages: two frames crossfaded by scroll ---- */
@@ -54,8 +56,8 @@
     var n = (i % 8) + 1, alt = STAGE_ALT[i % 8];
     host.innerHTML =
       '<div class="ph">' +
-        '<img class="ph-a" src="' + P + "s" + n + 'a.jpg" alt="' + alt + '" loading="lazy" decoding="async">' +
-        '<img class="ph-b" src="' + P + "s" + n + 'b.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
+        '<img class="ph-a" src="' + P + "s" + n + 'a.jpg' + V + '" alt="' + alt + '" loading="lazy" decoding="async">' +
+        '<img class="ph-b" src="' + P + "s" + n + 'b.jpg' + V + '" alt="" aria-hidden="true" loading="lazy" decoding="async">' +
       "</div>";
     var imgs = host.querySelectorAll ? host.querySelectorAll("img") : [];
     var a = imgs[0], b = imgs[1];
