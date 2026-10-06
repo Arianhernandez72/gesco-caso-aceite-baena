@@ -317,6 +317,7 @@ window.I18N = {
     "common.added": "Ajouté au panier",
     "common.close": "Fermer",
     "common.theme": "Thème",
+    "lead.privacy": "Site fictif (cas GESCO, ESIC) : vos données sont enregistrées dans une feuille de calcul de l'équipe, uniquement pour ce travail. Elles ne sont ni cédées ni utilisées à d'autres fins, et nous les supprimons à la fin du cours.",
     "common.required": "Champs obligatoires"
   },
 
@@ -637,6 +638,7 @@ window.I18N = {
     "common.added": "Añadido al carrito",
     "common.close": "Cerrar",
     "common.theme": "Tema",
+    "lead.privacy": "Web ficticia (caso GESCO, ESIC): tus datos se guardan en una hoja de cálculo del equipo, solo para este trabajo. No se ceden ni se usan para nada más, y los borramos al terminar el curso.",
     "common.required": "Campos obligatorios"
   },
 
@@ -957,6 +959,7 @@ window.I18N = {
     "common.added": "Added to cart",
     "common.close": "Close",
     "common.theme": "Theme",
+    "lead.privacy": "Fictional site (GESCO case, ESIC): your details are saved in the team's spreadsheet, only for this coursework. They are not shared or used for anything else, and we delete them when the course ends.",
     "common.required": "Required fields"
   }
 };

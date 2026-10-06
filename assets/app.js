@@ -91,7 +91,16 @@
     dbP = (window.claude && window.claude.use) ? window.claude.use("db").catch(function () { return null; }) : Promise.resolve(null);
     return dbP;
   }
+  /* Outside Claude, forms go to a Google Sheet through an Apps Script web app (assets/config.js).
+     The request is fire-and-forget: the script's reply is opaque to the page (no-cors). */
+  function sendToSheet(kind, payload) {
+    var body = { kind: kind, lang: store.lang, createdAt: new Date().toISOString(), page: location.hash || "#/" };
+    Object.keys(payload).forEach(function (k) { body[k] = payload[k]; });
+    return fetch(window.AOP_SHEETS_URL, { method: "POST", mode: "no-cors", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(body) })
+      .then(function () { return true; }).catch(function () { return false; });
+  }
   function saveLead(kind, payload) {
+    if (window.AOP_SHEETS_URL && window.fetch) return sendToSheet(kind, payload);
     return getDb().then(function (db) {
       if (!db) return false;
       var id = kind + "-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
@@ -332,8 +341,9 @@
       '<label class="check"><input type="checkbox" id="' + idp + '-consent"><span>' + esc(t("lead.consent")) + ' <span class="req">*</span></span></label>' +
       '<span class="err" id="' + idp + '-consent-err" hidden></span>' +
       '<div><button class="btn" type="submit">' + esc(t("lead.submit")) + ic("arrow", "ic-arrow") + "</button></div>" +
-      '<p class="hint">' + esc(t("common.required")) + " : *</p></form>";
+      '<p class="hint">' + esc(t("common.required")) + " : *</p>" + privacyNote() + "</form>";
   }
+  function privacyNote() { return '<p class="hint">' + esc(t("lead.privacy")) + "</p>"; }
   function validEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
   function wireLeadForm(idp, kind) {
     var f = $("#" + idp); if (!f) return;
@@ -744,7 +754,7 @@
         '<label class="check"><input type="checkbox" id="co-inv"><span>' + esc(t("co.invoice")) + "</span></label>" +
         '<div class="formgrid" id="co-inv-box" hidden>' + fld("bcompany", "co.company", "text", false, "organization") + fld("bvat", "co.vatno", "text", false, "off") +
           fld("baddr", "co.addr", "text", false, "off", true) + fld("bzip", "co.zip", "text", false, "off") + fld("bcity", "co.city", "text", false, "off") + "</div>" +
-        '<label class="check"><input type="checkbox" id="co-optin"><span>' + esc(t("co.optin")) + "</span></label>" +
+        '<label class="check"><input type="checkbox" id="co-optin"><span>' + esc(t("co.optin")) + "</span></label>" + privacyNote() +
         '<p class="hint">' + esc(t("common.required")) + " : *</p>" +
         '<div class="row g12"><button class="btn" type="submit">' + esc(t("co.next")) + ic("arrow", "ic-arrow") + '</button><a class="btn btn-ghost" href="#/panier">' + esc(t("co.back")) + "</a></div></form>";
     } else if (s === 2) {
@@ -799,7 +809,7 @@
             '<div class="field span2"><label for="su-pass">' + esc(t("acct.pass")) + ' <span class="req">*</span></label><input id="su-pass" type="password" required></div>' +
             '<div class="field span2"><label for="su-profile">' + esc(t("acct.pref.profile")) + ' <span class="opt">(' + esc(t("lead.opt")) + ")</span></label>" +
               '<select id="su-profile"><option value="">—</option><option>' + esc(t("acct.pref.soft")) + "</option><option>" + esc(t("acct.pref.bal")) + "</option><option>" + esc(t("acct.pref.int")) + "</option></select></div>" +
-          '</div><span class="err" id="su-err" hidden></span><button class="btn" type="submit">' + esc(t("acct.create")) + ic("arrow", "ic-arrow") + "</button>" +
+          '</div>' + privacyNote() + '<span class="err" id="su-err" hidden></span><button class="btn" type="submit">' + esc(t("acct.create")) + ic("arrow", "ic-arrow") + "</button>" +
           '<p class="hint">' + esc(t("common.required")) + " : *</p></form></div></div></div></div></section>";
     }
     return '<section class="section"><div class="wrap stack g24">' + crumb(t("acct.title")) +
@@ -931,7 +941,7 @@
           '<div class="field"><label for="pr-vol">' + esc(t("pro.vol")) + ' <span class="opt">(' + esc(t("lead.opt")) + ')</span></label><select id="pr-vol"><option>—</option><option>&lt; 100</option><option>100 – 500</option><option>500 – 2 000</option><option>&gt; 2 000</option></select></div>' +
           '<div class="field span2"><label for="pr-vat">' + esc(t("co.vatno")) + ' <span class="opt">(' + esc(t("lead.opt")) + ')</span></label><input id="pr-vat"></div>' +
           '<div class="field span2"><label for="pr-msg">' + esc(t("contact.msg")) + ' <span class="opt">(' + esc(t("lead.opt")) + ')</span></label><textarea id="pr-msg"></textarea></div>' +
-        '</div><span class="err" id="pr-err" hidden></span><button class="btn" type="submit">' + esc(t("pro.send")) + ic("arrow", "ic-arrow") + "</button>" +
+        '</div>' + privacyNote() + '<span class="err" id="pr-err" hidden></span><button class="btn" type="submit">' + esc(t("pro.send")) + ic("arrow", "ic-arrow") + "</button>" +
         '<p class="hint">' + esc(t("common.required")) + " : *</p></form></div></div></div></section>";
   }
 
@@ -941,7 +951,7 @@
         '<div class="field"><label for="ct-name">' + esc(t("co.first")) + ' <span class="req">*</span></label><input id="ct-name" required></div>' +
         '<div class="field"><label for="ct-email">' + esc(t("co.email")) + ' <span class="req">*</span></label><input id="ct-email" type="email" required></div>' +
         '<div class="field span2"><label for="ct-msg">' + esc(t("contact.msg")) + ' <span class="req">*</span></label><textarea id="ct-msg" required></textarea></div>' +
-      '</div><span class="err" id="ct-err" hidden></span><button class="btn" type="submit">' + ic("mail") + esc(t("contact.send")) + "</button>" +
+      '</div>' + privacyNote() + '<span class="err" id="ct-err" hidden></span><button class="btn" type="submit">' + ic("mail") + esc(t("contact.send")) + "</button>" +
       '<p class="hint">' + esc(t("common.required")) + " : *</p></form></div>" +
       '<div class="grid g-2"><div class="pillar row g12">' + ic("pin") + '<span class="small">Consejo Regulador DOP Baena · Av. de Cervantes 2, 14850 Baena (Córdoba)</span></div>' +
         '<div class="pillar row g12">' + ic("phone") + '<span class="small tnum">+34 957 691 121 · bonjour@aopbaena.example</span></div></div></div></section>';
