@@ -1,6 +1,6 @@
-/* Rendered photography. Replaces the vector packshots, hero and process scenes
-   with the stills produced by the 3D studio, keeping the same call signatures so
-   the rest of the site is unchanged. */
+/* Photography. The hero is a photograph of the bottle in its Andalusian setting;
+   the mill visit uses photographs too; product packshots and the process scenes are
+   3D studio stills. Keeps the same call signatures so the rest of the site is unchanged. */
 (function () {
   "use strict";
   var A = window.ART, P = "assets/photo/";
@@ -20,14 +20,24 @@
       '" loading="lazy" decoding="async"' + style + ">";
   };
 
-  /* ---- hero ---- */
+  /* ---- hero: wide frame on desktop, a tighter crop of the same photo on phones ---- */
   A.hero = function () {
-    return '<img class="hero-art" src="' + P + 'hero.jpg" alt="Bouteille d\'huile d\'olive AOP Baena sur une terrasse devant l\'oliveraie andalouse" fetchpriority="high" decoding="async">';
+    return '<picture><source media="(max-width:820px)" srcset="' + P + 'hero-m.jpg">' +
+      '<img class="hero-art" src="' + P + 'hero.jpg" alt="Bouteille d\'huile d\'olive AOP Baena, olives et pain sur une terrasse face à un village blanc et aux oliveraies d\'Andalousie" fetchpriority="high" decoding="async"></picture>';
   };
 
   /* ---- a wide landscape band ---- */
   A.landscape = function (cls) {
-    return '<img class="' + (cls || "land") + '" src="' + P + 'hero.jpg" alt="Oliveraie de Baena" loading="lazy" decoding="async">';
+    return '<img class="' + (cls || "land") + '" src="' + P + 'hero-m.jpg" alt="Terrasse andalouse face au village et aux oliveraies de Baena" loading="lazy" decoding="async">';
+  };
+
+  /* ---- the mill visit: photographs of the olive grove and a tasting on the terrace ---- */
+  var TOUR = {
+    cata: "Dégustation d'huile AOP Baena sur une terrasse face au village",
+    olivar: "Oliviers centenaires dans les collines de Baena"
+  };
+  A.tourPhoto = function (id) {
+    return '<img src="' + P + "t-" + id + '.jpg" alt="' + TOUR[id].replace(/"/g, "&quot;") + '" loading="lazy" decoding="async">';
   };
 
   /* ---- the eight process stages: two frames crossfaded by scroll ---- */

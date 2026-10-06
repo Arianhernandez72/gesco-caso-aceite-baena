@@ -1,5 +1,6 @@
 /* Layout: light ivory page; greens are layered from sage to deep olive and used by role
-   (sage = surfaces, leaf = accents, olive = action, deep = footer only). The home page
+   (sage = surfaces, leaf = accents, olive = action, deep = footer and dark bands); home
+   sections alternate light green, cream and deep olive bands. The home page
    pins an illustrated stage while the eight steps of the oil's journey scroll past. */
 :root{
   --bg:#F8F5EC; --surface:#FFFDF8; --surface-2:#F1F2E6;
@@ -73,6 +74,33 @@ button{font:inherit; color:inherit}
 @media (max-width:520px){ .wrap{padding-inline:16px} }
 .measure{max-width:var(--measure)}
 .section{padding-block:clamp(56px,7vw,104px)}
+/* Tonal bands: home sections alternate light green, cream and deep olive in both
+   colour schemes, so the page never reads as one dark green block. Each band
+   re-scopes the tokens, so everything inside keeps its contrast. */
+.tone-mint,.tone-cream{
+  --surface:#FFFDF8; --surface-2:#F1F2E6;
+  --sage-50:#F3F7E8; --sage-100:#E1EBC8; --sage-200:#CFDDB0; --sage-300:#B5C696;
+  --leaf:#8BA358; --olive:#5C7A2B; --olive-600:#4A6522;
+  --ink:#1F2614; --muted:#5A6249; --line:#D9DFC4; --line-2:#E6EAD6;
+  --oil:#B88E1C; --oil-soft:#F6E9BC; --btn-ink:#FFFDF6;
+  --logo-drop:#5C7A2B; --logo-leaf:#F7F1DF; --logo-gold:#C89D25;
+  --shadow-sm:0 1px 2px rgba(38,51,26,.06), 0 2px 8px rgba(38,51,26,.05);
+  --shadow:0 2px 6px rgba(38,51,26,.06), 0 14px 34px rgba(38,51,26,.10);
+  --shadow-lg:0 4px 12px rgba(38,51,26,.08), 0 28px 60px rgba(38,51,26,.16);
+  color:var(--ink); color-scheme:light;
+}
+.tone-mint{--bg:#E6F0D2; background:var(--bg)}
+.tone-cream{--bg:#FAF7EE; background:var(--bg)}
+.tone-deep{
+  --bg:#2B3A1E; --surface:#34452A; --surface-2:#3B4D2F;
+  --sage-50:#34452A; --sage-100:#40542F; --sage-200:#4C6239; --sage-300:#647C4C;
+  --leaf:#B7CF84; --olive:#B9D47E; --olive-600:#CDE39A;
+  --ink:#F3F1E4; --muted:#C3C8AE; --line:#4A5C3A; --line-2:#3F5032;
+  --oil:#E6C25A; --oil-soft:#4A3F1C; --btn-ink:#1A240F;
+  --shadow-sm:0 1px 2px rgba(0,0,0,.25); --shadow:0 2px 8px rgba(0,0,0,.25), 0 14px 34px rgba(0,0,0,.22);
+  --shadow-lg:0 4px 12px rgba(0,0,0,.3), 0 28px 60px rgba(0,0,0,.3);
+  background:var(--bg); color:var(--ink); color-scheme:dark;
+}
 .stack{display:flex; flex-direction:column}
 .row{display:flex; flex-wrap:wrap; align-items:center}
 .g6{gap:6px}.g8{gap:8px}.g12{gap:12px}.g16{gap:16px}.g24{gap:24px}.g32{gap:32px}.g48{gap:48px}
@@ -265,7 +293,8 @@ button{font:inherit; color:inherit}
 /* ---------------- hero ---------------- */
 .hero{position:relative; overflow:hidden; background:#F3EEDF; margin-top:calc(var(--hdr) * -1); isolation:isolate}
 .hero-stage{position:relative; height:clamp(560px, 82vh, 780px)}
-.hero-art{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 46%}
+.hero-stage > picture{display:contents}
+.hero-art{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:72% 56%}
 .hero-art [data-depth]{will-change:transform; transition:transform .6s var(--ease)}
 .hero-copy{position:absolute; inset:0; display:flex; align-items:center; padding-top:var(--hdr); z-index:2}
 .hero-copy::before{content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
@@ -287,7 +316,7 @@ button{font:inherit; color:inherit}
 .hero .btn-ghost{color:#1F2614; border-color:rgba(31,38,20,.22); background:rgba(255,253,246,.5)}
 @media (max-width:820px){
   .hero-stage{height:auto; display:flex; flex-direction:column}
-  .hero-art{position:relative; height:clamp(260px, 62vw, 420px); order:2}
+  .hero-art{position:relative; height:clamp(260px, 62vw, 420px); order:2; object-position:60% 55%}
   .hero-copy{position:relative; padding-top:calc(var(--hdr) + 28px); padding-bottom:8px; order:1; background:linear-gradient(#EAE2C8,#F3EEDF)}
   .scroll-cue{display:none}
   .hero-copy::before{display:none}
@@ -309,7 +338,7 @@ button{font:inherit; color:inherit}
 @media (max-width:460px){ .trust{grid-template-columns:minmax(0,1fr)} }
 
 /* ---------------- story (scroll-driven) ---------------- */
-.story{position:relative; background:linear-gradient(180deg, var(--bg), var(--sage-50) 12%, var(--sage-50) 88%, var(--bg))}
+.story{position:relative; background:linear-gradient(180deg, #FAF7EE, var(--bg) 9%, var(--bg) 92%, #FAF7EE)}
 .story-intro{padding-top:clamp(60px,8vw,110px); padding-bottom:20px}
 .story-track{position:relative}
 .story-pin{
