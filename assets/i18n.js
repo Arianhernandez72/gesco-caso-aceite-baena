@@ -242,7 +242,7 @@ window.I18N = {
     "ship.pack.h": "Préparation et emballage",
     "ship.pack.p": "Chaque bouteille part dans un sachet anti-fuite, calée par des coussins d'air sur les six faces, dans un carton double cannelure. Le bidon 5 L voyage sans sur-emballage : le métal ne casse pas. Taux de casse constaté sur la campagne : 0,4 %.",
     "ship.vat.h": "TVA et facture",
-    "ship.vat.p": "TVA espagnole de 5,5 % appliquée aux ventes à distance vers la France selon le régime de la directive TVA de l'Union. La facture est disponible dans votre compte dès l'expédition. Les professionnels disposant d'un numéro de TVA intracommunautaire commandent hors taxes depuis l'Espace Pro.",
+    "ship.vat.p": "TVA française de 5,5 %, le taux applicable aux produits alimentaires : pour les ventes à distance aux particuliers, la TVA du pays de destination s'applique, déclarée par notre guichet unique (OSS). La facture est disponible dans votre compte dès l'expédition. Les professionnels disposant d'un numéro de TVA intracommunautaire commandent hors taxes depuis l'Espace Pro.",
     "ship.free": "Livraison offerte dès 49 € d'achat.",
 
     "pro.title": "Espace Pro",
@@ -563,7 +563,7 @@ window.I18N = {
     "ship.pack.h": "Preparación y embalaje",
     "ship.pack.p": "Cada botella sale en bolsa antifugas, calzada con cojines de aire en las seis caras, dentro de una caja de doble canal. La lata de 5 L viaja sin sobreembalaje: el metal no rompe. Tasa de rotura de la campaña: 0,4 %.",
     "ship.vat.h": "IVA y factura",
-    "ship.vat.p": "IVA del 5,5 % aplicado a la venta a distancia hacia Francia conforme al régimen de la Directiva del IVA de la Unión. La factura está en tu cuenta desde la expedición. Los profesionales con NIF intracomunitario compran sin impuestos desde el Área Profesional.",
+    "ship.vat.p": "IVA francés del 5,5 %, el tipo aplicable a los alimentos: en la venta a distancia a particulares se aplica el IVA del país de destino, declarado a través de nuestra ventanilla única (OSS). La factura está en tu cuenta desde la expedición. Los profesionales con NIF intracomunitario compran sin impuestos desde el Área Profesional.",
     "ship.free": "Envío gratis a partir de 49 € de compra.",
 
     "pro.title": "Área Profesional",
@@ -884,7 +884,7 @@ window.I18N = {
     "ship.pack.h": "Preparation and packaging",
     "ship.pack.p": "Each bottle ships in a leak-proof sleeve, cushioned by air pillows on all six faces, inside a double-wall carton. The 5 L tin travels without over-packing: metal does not break. Breakage rate recorded this season: 0.4%.",
     "ship.vat.h": "VAT and invoice",
-    "ship.vat.p": "VAT of 5.5% applied to distance selling into France under the EU VAT Directive regime. Your invoice is in your account from dispatch. Trade customers with an EU VAT number order tax-free through the Trade area.",
+    "ship.vat.p": "French VAT of 5.5%, the rate that applies to food: for distance sales to consumers, VAT of the destination country applies, declared through our one-stop shop (OSS). Your invoice is in your account from dispatch. Trade customers with an EU VAT number order tax-free through the Trade area.",
     "ship.free": "Free shipping on orders over €49.",
 
     "pro.title": "Trade",
