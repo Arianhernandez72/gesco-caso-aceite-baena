@@ -631,15 +631,11 @@
     if (p.notes) tabs.push(["notes", "pdp.tab.notes"]);
     tabs.push(["ship", "pdp.tab.ship"]);
     if (revs.length) tabs.push(["rev", "pdp.tab.rev"]);
-    var views = [["pdp.v.front"], ["pdp.v.detail"], ["pdp.v.use"]];
 
     return '<section class="section" style="padding-top:clamp(28px,4vw,48px)"><div class="wrap stack g32">' +
       '<p class="breadcrumb"><a href="#/">' + esc(t("nav.home")) + '</a><span>/</span><a href="#/produits">' + esc(t("shop.title")) + "</a><span>/</span>" + esc(L(p.name)) + "</p>" +
       '<div class="pdp">' +
-        '<div class="pdp-media"><div class="pdp-main" id="pdp-main" title="' + esc(t("pdp.zoom")) + '">' + pdpView(p, pdpState.view) + "</div>" +
-          '<div class="thumbs" role="group">' + views.map(function (v, i) {
-            return '<button data-view="' + i + '" aria-pressed="' + (i === pdpState.view) + '" aria-label="' + esc(t(v[0])) + '">' + pdpView(p, i) + "</button>";
-          }).join("") + "</div></div>" +
+        '<div class="pdp-media"><div class="pdp-main" id="pdp-main" title="' + esc(t("pdp.zoom")) + '">' + pdpView(p, 0) + "</div></div>" +
         '<div class="stack g16">' +
           '<span class="diff">' + ic(p.icon) + esc(L(p.diff)) + "</span>" +
           "<h1 style=\"font-size:clamp(2rem,1.4rem + 2vw,2.8rem)\">" + esc(L(p.name)) + "</h1>" +
