@@ -6,7 +6,7 @@ window.DOSSIER = (function () {
     { k: x("Partenaires clés", "Socios clave", "Key partners"), v: x(
       "Conseil régulateur de l'AOP Baena (19 moulins), moulins associés, Turismo Andaluz et Turespaña, Diputación de Córdoba et Ruta del Aceite, opérateur logistique spécialisé liquides, hébergeur et prestataire de paiement.",
       "Consejo Regulador de la DOP Baena (19 almazaras), almazaras asociadas, Turismo Andaluz y Turespaña, Diputación de Córdoba y Ruta del Aceite, operador logístico especializado en líquidos, hosting y pasarela de pago.",
-      "DOP Baena Regulatory Council (19 mills), member mills, Turismo Andaluz and Turespaña, Diputación de Córdoba and the Olive Oil Route, a logistics operator specialised in liquids, the host and the payment provider."), span: true },
+      "DOP Baena Regulatory Council (19 mills), member mills, Turismo Andaluz and Turespaña, Diputación de Córdoba and the Olive Oil Route, a logistics operator specialised in liquids, the host and the payment provider.") },
     { k: x("Activités clés", "Actividades clave", "Key activities"), v: x(
       "Achat aux moulins de l'AOP, communication offline en destination, inbound et SEO/SEM, exploitation de l'ecommerce, logistique intracommunautaire, relation avec les tour-opérateurs, la presse et les créateurs de contenu.",
       "Compra a las almazaras de la DOP, comunicación offline en destino, inbound y SEO/SEM, gestión del ecommerce, logística intracomunitaria, relación con touroperadores, prensa y creadores de contenido.",
@@ -14,7 +14,7 @@ window.DOSSIER = (function () {
     { k: x("Proposition de valeur", "Propuesta de valor", "Value proposition"), v: x(
       "Une huile AOP Baena traçable jusqu'à un moulin précis, avec son histoire et sa certification d'origine : rapporter chez soi le goût réel de l'Andalousie plutôt qu'un assemblage anonyme de supermarché. Captation de données zero-party et first-party aux points de contact offline-to-online (QR en aéroport, dégustations) pour personnaliser l'expérience D2C et sécuriser le réachat.",
       "Un aceite DOP Baena trazable hasta una almazara concreta, con su historia y su certificación de origen: llevarse a casa el sabor real de Andalucía en lugar de una mezcla anónima de supermercado. Captación de datos zero-party y first-party en los puntos de contacto offline-to-online (QR en aeropuerto, degustaciones) para personalizar la experiencia D2C y asegurar la recompra.",
-      "A Baena PDO oil traceable to a named mill, with its story and its origin certification: taking the real taste of Andalusia home instead of an anonymous supermarket blend. Zero-party and first-party data captured at offline-to-online touchpoints (airport QR, tastings) to personalise the D2C experience and secure repeat purchase."), span: true },
+      "A Baena PDO oil traceable to a named mill, with its story and its origin certification: taking the real taste of Andalusia home instead of an anonymous supermarket blend. Zero-party and first-party data captured at offline-to-online touchpoints (airport QR, tastings) to personalise the D2C experience and secure repeat purchase.") },
     { k: x("Relation client", "Relación con clientes", "Customer relationships"), v: x(
       "Communauté sur les réseaux sociaux, email marketing personnalisé par buyer persona, service client trilingue, rappel de réachat calé sur le cycle de vie du produit (une bouteille dure 2 à 3 mois).",
       "Comunidad en redes sociales, email marketing personalizado por buyer persona, atención al cliente trilingüe, recordatorio de recompra ligado al ciclo de vida del producto (una botella dura 2-3 meses).",
@@ -42,24 +42,24 @@ window.DOSSIER = (function () {
   ];
 
   var TREE = [
-    ["Accueil", "#/", 0],
-    ["L'AOP Baena", "#/aop-baena", 1],
-    ["Produits", "#/produits", 1],
-    ["Sélection Classique", "#/produit/classique", 2],
-    ["Coffret Dégustation Premium", "#/produit/premium", 2],
-    ["Coffret Cadeau", "#/produit/cadeau", 2],
-    ["Bidon 5 L", "#/produit/bidon", 2],
-    ["Accessoires de dégustation", "#/produits", 2],
-    ["Recettes & Santé", "#/recettes", 1],
-    ["Oléotourisme", "#/oleotourisme", 1],
-    ["Livraison en France", "#/livraison", 1],
-    ["Espace Pro (B2B)", "#/pro", 1],
-    ["Panier", "#/panier", 1],
-    ["Commande — 3 étapes", "#/checkout", 2],
-    ["Mon compte", "#/compte", 1],
-    ["Mes commandes · Mes informations · Facturation · Préférences", "#/compte", 2],
-    ["Contact", "#/contact", 1],
-    ["Dossier du cas", "#/dossier", 1]
+    [x("Accueil", "Inicio", "Home"), "#/", 0],
+    [x("L'AOP Baena", "La DOP Baena", "The PDO"), "#/aop-baena", 1],
+    [x("Produits", "Productos", "Products"), "#/produits", 1],
+    [x("Sélection Classique", "Selección Clásica", "Classic Selection"), "#/produit/classique", 2],
+    [x("Coffret Dégustation Premium", "Estuche Cata Premium", "Premium Tasting Box"), "#/produit/premium", 2],
+    [x("Coffret Cadeau", "Kit de Regalo", "Gift Set"), "#/produit/cadeau", 2],
+    [x("Bidon 5 L", "Lata 5 L", "5 L Tin"), "#/produit/bidon", 2],
+    [x("Accessoires de dégustation", "Accesorios de cata", "Tasting accessories"), "#/produits", 2],
+    [x("Recettes & Santé", "Recetas y salud", "Recipes & Health"), "#/recettes", 1],
+    [x("Oléotourisme", "Oleoturismo", "Oleotourism"), "#/oleotourisme", 1],
+    [x("Livraison en France", "Envíos a Francia", "Delivery to France"), "#/livraison", 1],
+    [x("Espace Pro (B2B)", "Área Profesional (B2B)", "Trade area (B2B)"), "#/pro", 1],
+    [x("Panier", "Carrito", "Cart"), "#/panier", 1],
+    [x("Commande — 3 étapes", "Pedido — 3 pasos", "Checkout — 3 steps"), "#/checkout", 2],
+    [x("Mon compte", "Mi cuenta", "My account"), "#/compte", 1],
+    [x("Mes commandes · Mes informations · Facturation · Préférences", "Mis pedidos · Mis datos · Facturación · Preferencias", "My orders · My details · Billing · Preferences"), "#/compte", 2],
+    [x("Contact", "Contacto", "Contact"), "#/contact", 1],
+    [x("Dossier du cas", "Dossier del caso", "Case dossier"), "#/dossier", 1]
   ];
 
   var FORMS = [
@@ -142,16 +142,22 @@ window.DOSSIER = (function () {
         '<div class="wrap stack g16">' + inner + "</div></section>";
     }
 
-    var canvas = '<div class="canvas">' + CANVAS.map(function (c) {
-      return '<div class="cell' + (c.span ? " c-span2" : "") + '"><h4>' + esc(L(c.k)) + "</h4><p>" + esc(L(c.v)) + "</p></div>";
+    /* Classic Business Model Canvas layout: each block keeps its place in the grid and carries its icon. */
+    var BMC = [["p", "link"], ["a", "tasks"], ["v", "gift"], ["r", "heart"], ["s", "users"], ["k", "key"], ["c", "truck"], ["x", "tag"], ["y", "euro"]];
+    var canvas = '<div class="canvas">' + CANVAS.map(function (c, i) {
+      var m = BMC[i];
+      return '<div class="cell bmc-' + m[0] + '"><div class="bmc-h"><span class="bmc-ic">' + window.BAENA.icon(m[1]) + "</span><h4>" + esc(L(c.k)) + "</h4></div><p>" + esc(L(c.v)) + "</p></div>";
     }).join("") + "</div>";
+    function why(fr, es, en) {
+      return '<div class="notice" style="margin-bottom:14px"><strong>' + esc(L(x("Démarche et justification", "Cómo lo hemos abordado y por qué", "How we approached it and why"))) + "</strong> · " + esc(L(x(fr, es, en))) + "</div>";
+    }
 
     var tree = '<div class="card" style="padding:18px"><div class="stack g6">' + TREE.map(function (n) {
       var pad = n[2] * 22;
       var mark = n[2] === 0 ? "" : (n[2] === 1 ? "└─ " : "  └─ ");
       return '<div style="padding-left:' + pad + 'px; font-size:.9rem">' +
         '<span class="muted">' + mark + '</span><a href="' + n[1] + '" style="text-decoration:none' +
-        (n[2] === 0 ? ";font-weight:700" : "") + '">' + esc(n[0]) + "</a></div>";
+        (n[2] === 0 ? ";font-weight:700" : "") + '">' + esc(L(n[0])) + "</a></div>";
     }).join("") + "</div></div>";
 
     var forms = '<div class="tablewrap"><table><thead><tr><th>' +
@@ -249,11 +255,17 @@ window.DOSSIER = (function () {
           }).join("") + "</div></div>" +
       "</div></section>" +
 
-      sec("dc-canvas", "", "<h2>" + esc(t("dossier.d1")) + "</h2>" + canvas) +
+      sec("dc-canvas", "", "<h2>" + esc(t("dossier.d1")) + "</h2>" +
+        why("Nous sommes partis de la proposition de valeur, au centre du canevas, puis nous avons construit autour d'elle la partie droite (à qui nous vendons, comment nous les atteignons, quelle relation nous gardons) et la partie gauche (ce qu'il faut pour tenir cette promesse). Le cas demande de capter le touriste en Espagne et de lui vendre à son retour en France : le canevas oblige partenaires, canaux, coûts et revenus à rester cohérents avec ce choix.",
+            "Empezamos por la propuesta de valor, en el centro del lienzo, y construimos a su alrededor la parte derecha (a quién vendemos, cómo llegamos a él y qué relación mantenemos) y la izquierda (lo que necesitamos para cumplir esa promesa). El caso pide captar al turista en España y venderle cuando vuelve a Francia: el canvas obliga a que socios, canales, costes e ingresos sean coherentes con esa decisión.",
+            "We started from the value proposition, at the centre of the canvas, and built around it the right side (who we sell to, how we reach them, the relationship we keep) and the left side (what we need to keep that promise). The case asks us to capture the tourist in Spain and sell to them once home in France: the canvas forces partners, channels, costs and revenue to stay consistent with that choice.") + canvas) +
       sec("dc-tree", "", "<h2>" + esc(t("dossier.d2")) + "</h2>" +
         '<p class="muted measure">' + esc(L(x("Le menu principal reprend les six premières branches : c'est le niveau visuel initial du catalogue. Chaque entrée de l'arbre est cliquable.",
           "El menú principal recoge las seis primeras ramas: ese es el nivel visual inicial del catálogo. Cada entrada del árbol es clicable.",
-          "The main menu carries the first six branches: that is the catalogue's initial visual level. Every node here is clickable."))) + "</p>" + tree) +
+          "The main menu carries the first six branches: that is the catalogue's initial visual level. Every node here is clickable."))) + "</p>" +
+        why("Peu de branches de premier niveau, pour que le visiteur atteigne ce qu'il cherche en deux clics, réparties en deux parcours : la confiance (l'AOP, les recettes, l'oléotourisme) et l'achat (produits, panier, compte). Une structure courte réduit l'abandon, et un produit sous appellation se vend mieux quand on explique d'abord son origine.",
+            "Pocas ramas de primer nivel, para que el visitante llegue a lo que busca en dos clics, repartidas en dos recorridos: el de la confianza (la DOP, recetas, oleoturismo) y el de la compra (productos, carrito, cuenta). Una estructura corta reduce el abandono, y un producto con sello de origen se vende mejor si antes se explica ese origen.",
+            "Few top-level branches so visitors reach what they want in two clicks, split into two journeys: trust (the PDO, recipes, oleotourism) and purchase (products, cart, account). A short structure reduces drop-off, and a product with an appellation sells better when its origin is explained first.") + tree) +
       sec("dc-forms", "", "<h2>" + esc(t("dossier.d3")) + "</h2>" + forms) +
       sec("dc-account", "", "<h2>" + esc(t("dossier.d4")) + "</h2>" + acct) +
       sec("dc-comm", "", "<h2>" + esc(t("dossier.d5")) + "</h2>" + comm) +

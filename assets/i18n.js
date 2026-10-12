@@ -2,7 +2,7 @@
 window.I18N = {
   fr: {
     "lang.name": "Français",
-    "top.1": "Livraison en France en 2 à 5 jours · sans douane",
+    "top.1": "Livraison standard en France en 2 à 5 jours · sans douane",
     "top.2": "Port offert dès 49 €",
     "top.3": "Appellation d'Origine Protégée depuis 1981",
 
@@ -108,7 +108,7 @@ window.I18N = {
     "pdp.upsell.h": "Passez au coffret",
     "pdp.upsell.p": "Pour 23,10 € de plus, trois monovariétaux et la fiche de dégustation. C'est le produit que nos clients offrent le plus.",
     "pdp.cross.h": "On y ajoute souvent",
-    "pdp.ship.p": "Expédition depuis Cordoue sous 24 h ouvrées. Livraison en France métropolitaine en 2 à 5 jours selon le transporteur choisi, sans formalité douanière ni droits à payer : l'Espagne et la France sont dans le marché unique. Emballage renforcé avec calage antichoc et sachet anti-fuite pour le verre.",
+    "pdp.ship.p": "Expédition depuis Cordoue sous 24 h ouvrées. Livraison en France métropolitaine : 2 à 5 jours en standard (DHL eCommerce), 2 à 4 jours en express (MBE) et 5 à 9 jours avec l'option économique (Correos), sans formalité douanière ni droits à payer : l'Espagne et la France sont dans le marché unique. Emballage renforcé avec calage antichoc et sachet anti-fuite pour le verre.",
     "pdp.back": "Retour aux produits",
 
     "cart.title": "Panier",
@@ -242,7 +242,7 @@ window.I18N = {
     "ship.pack.h": "Préparation et emballage",
     "ship.pack.p": "Chaque bouteille part dans un sachet anti-fuite, calée par des coussins d'air sur les six faces, dans un carton double cannelure. Le bidon 5 L voyage sans sur-emballage : le métal ne casse pas. Taux de casse constaté sur la campagne : 0,4 %.",
     "ship.vat.h": "TVA et facture",
-    "ship.vat.p": "TVA espagnole de 5,5 % appliquée aux ventes à distance vers la France selon le régime de la directive TVA de l'Union. La facture est disponible dans votre compte dès l'expédition. Les professionnels disposant d'un numéro de TVA intracommunautaire commandent hors taxes depuis l'Espace Pro.",
+    "ship.vat.p": "TVA française de 5,5 %, le taux applicable aux produits alimentaires : pour les ventes à distance aux particuliers, la TVA du pays de destination s'applique, déclarée par notre guichet unique (OSS). La facture est disponible dans votre compte dès l'expédition. Les professionnels disposant d'un numéro de TVA intracommunautaire commandent hors taxes depuis l'Espace Pro.",
     "ship.free": "Livraison offerte dès 49 € d'achat.",
 
     "pro.title": "Espace Pro",
@@ -323,7 +323,7 @@ window.I18N = {
 
   es: {
     "lang.name": "Español",
-    "top.1": "Entrega en Francia en 2–5 días · sin aduanas",
+    "top.1": "Entrega estándar en Francia en 2–5 días · sin aduanas",
     "top.2": "Envío gratis desde 49 €",
     "top.3": "Denominación de Origen Protegida desde 1981",
 
@@ -429,7 +429,7 @@ window.I18N = {
     "pdp.upsell.h": "Pasa al estuche",
     "pdp.upsell.p": "Por 23,10 € más, tres monovarietales y la ficha de cata. Es el producto que más regalan nuestros clientes.",
     "pdp.cross.h": "Se suele añadir",
-    "pdp.ship.p": "Salida desde Córdoba en 24 h laborables. Entrega en Francia peninsular en 2–5 días según transportista, sin trámite aduanero ni aranceles: España y Francia están en el mercado único. Embalaje reforzado con relleno antichoque y bolsa antifugas para el vidrio.",
+    "pdp.ship.p": "Salida desde Córdoba en 24 h laborables. Entrega en Francia peninsular: 2–5 días en estándar (DHL eCommerce), 2–4 días en exprés (MBE) y 5–9 días con la opción económica (Correos), sin trámite aduanero ni aranceles: España y Francia están en el mercado único. Embalaje reforzado con relleno antichoque y bolsa antifugas para el vidrio.",
     "pdp.back": "Volver a productos",
 
     "cart.title": "Carrito",
@@ -563,7 +563,7 @@ window.I18N = {
     "ship.pack.h": "Preparación y embalaje",
     "ship.pack.p": "Cada botella sale en bolsa antifugas, calzada con cojines de aire en las seis caras, dentro de una caja de doble canal. La lata de 5 L viaja sin sobreembalaje: el metal no rompe. Tasa de rotura de la campaña: 0,4 %.",
     "ship.vat.h": "IVA y factura",
-    "ship.vat.p": "IVA del 5,5 % aplicado a la venta a distancia hacia Francia conforme al régimen de la Directiva del IVA de la Unión. La factura está en tu cuenta desde la expedición. Los profesionales con NIF intracomunitario compran sin impuestos desde el Área Profesional.",
+    "ship.vat.p": "IVA francés del 5,5 %, el tipo aplicable a los alimentos: en la venta a distancia a particulares se aplica el IVA del país de destino, declarado a través de nuestra ventanilla única (OSS). La factura está en tu cuenta desde la expedición. Los profesionales con NIF intracomunitario compran sin impuestos desde el Área Profesional.",
     "ship.free": "Envío gratis a partir de 49 € de compra.",
 
     "pro.title": "Área Profesional",
@@ -644,7 +644,7 @@ window.I18N = {
 
   en: {
     "lang.name": "English",
-    "top.1": "Delivery in France in 2–5 days · no customs",
+    "top.1": "Standard delivery in France in 2–5 days · no customs",
     "top.2": "Free shipping over €49",
     "top.3": "Protected Designation of Origin since 1981",
 
@@ -750,7 +750,7 @@ window.I18N = {
     "pdp.upsell.h": "Move up to the tasting box",
     "pdp.upsell.p": "For €23.10 more you get three single-varietal oils and the tasting sheet. It is the product our customers give away most.",
     "pdp.cross.h": "Often added",
-    "pdp.ship.p": "Dispatched from Córdoba within 24 working hours. Delivery in mainland France in 2–5 days depending on the carrier, with no customs formalities and no duty: Spain and France are in the single market. Reinforced packaging with shock padding and a leak-proof sleeve for glass.",
+    "pdp.ship.p": "Dispatched from Córdoba within 24 working hours. Delivery in mainland France: 2–5 days standard (DHL eCommerce), 2–4 days express (MBE) and 5–9 days with the economy option (Correos), with no customs formalities and no duty: Spain and France are in the single market. Reinforced packaging with shock padding and a leak-proof sleeve for glass.",
     "pdp.back": "Back to the shop",
 
     "cart.title": "Cart",
@@ -884,7 +884,7 @@ window.I18N = {
     "ship.pack.h": "Preparation and packaging",
     "ship.pack.p": "Each bottle ships in a leak-proof sleeve, cushioned by air pillows on all six faces, inside a double-wall carton. The 5 L tin travels without over-packing: metal does not break. Breakage rate recorded this season: 0.4%.",
     "ship.vat.h": "VAT and invoice",
-    "ship.vat.p": "VAT of 5.5% applied to distance selling into France under the EU VAT Directive regime. Your invoice is in your account from dispatch. Trade customers with an EU VAT number order tax-free through the Trade area.",
+    "ship.vat.p": "French VAT of 5.5%, the rate that applies to food: for distance sales to consumers, VAT of the destination country applies, declared through our one-stop shop (OSS). Your invoice is in your account from dispatch. Trade customers with an EU VAT number order tax-free through the Trade area.",
     "ship.free": "Free shipping on orders over €49.",
 
     "pro.title": "Trade",
