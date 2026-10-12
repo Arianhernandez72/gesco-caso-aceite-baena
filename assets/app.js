@@ -14,7 +14,12 @@
   function save(k, v) { try { localStorage.setItem("baena." + k, JSON.stringify(v)); } catch (e) {} }
   function load(k, d) { try { var r = localStorage.getItem("baena." + k); return r ? JSON.parse(r) : d; } catch (e) { return d; } }
   // French is the market language: default, overridden only by an explicit saved choice.
-  store.lang = (function () { var s = load("lang", null); return (s && I[s]) ? s : "fr"; })();
+  store.lang = (function () {
+    /* ?lang=es|fr|en opens the site in that language and remembers it. */
+    var q = (location.search.match(/[?&]lang=(fr|es|en)\b/) || [])[1];
+    if (q && I[q]) { save("lang", q); return q; }
+    var s = load("lang", null); return (s && I[s]) ? s : "fr";
+  })();
   store.cart = load("cart", []) || [];
   store.user = load("user", null);
   store.orders = load("orders", []) || [];
@@ -707,9 +712,9 @@
   }
 
   var SHIPOPTS = [
-    { id: "correos", n: "Correos — Paq Internacional", p: 6.9, d: { fr: "5 à 9 jours", es: "5 a 9 días", en: "5 to 9 days" } },
-    { id: "dhl", n: "DHL eCommerce", p: 9.9, d: { fr: "2 à 5 jours", es: "2 a 5 días", en: "2 to 5 days" } },
-    { id: "mbe", n: "Mail Boxes Etc (MBE)", p: 12.9, d: { fr: "2 à 4 jours", es: "2 a 4 días", en: "2 to 4 days" } }
+    { id: "correos", n: "Correos — Paq Internacional", p: 6.9, d: { fr: "5 à 9 jours · économique", es: "5 a 9 días · económico", en: "5 to 9 days · economy" } },
+    { id: "dhl", n: "DHL eCommerce", p: 9.9, d: { fr: "2 à 5 jours · standard", es: "2 a 5 días · estándar", en: "2 to 5 days · standard" } },
+    { id: "mbe", n: "Mail Boxes Etc (MBE)", p: 12.9, d: { fr: "2 à 4 jours · express", es: "2 a 4 días · exprés", en: "2 to 4 days · express" } }
   ];
   var PAYOPTS = [
     { id: "cb", n: "Carte Bancaire" }, { id: "visa", n: "Visa / Mastercard" }, { id: "paypal", n: "PayPal" }, { id: "apple", n: "Apple Pay" },
@@ -886,9 +891,9 @@
 
   function carrierTable() {
     var rows = [
-      ["Correos — Paq Internacional / Correos Express", "CMR / DNT UE", { fr: "5 à 9 jours", es: "5 a 9 días", en: "5 to 9 days" }, "6,90 €"],
-      ["Mail Boxes Etc (MBE)", { fr: "Bordereau UE standard", es: "Albarán UE estándar", en: "Standard EU waybill" }, { fr: "2 à 4 jours", es: "2 a 4 días", en: "2 to 4 days" }, "12,90 €"],
-      ["DHL eCommerce", { fr: "Bordereau UE standard", es: "Albarán UE estándar", en: "Standard EU waybill" }, { fr: "2 à 5 jours", es: "2 a 5 días", en: "2 to 5 days" }, "9,90 €"]
+      ["Correos — Paq Internacional / Correos Express", "CMR / DNT UE", { fr: "5 à 9 jours · économique", es: "5 a 9 días · económico", en: "5 to 9 days · economy" }, "6,90 €"],
+      ["Mail Boxes Etc (MBE)", { fr: "Bordereau UE standard", es: "Albarán UE estándar", en: "Standard EU waybill" }, { fr: "2 à 4 jours · express", es: "2 a 4 días · exprés", en: "2 to 4 days · express" }, "12,90 €"],
+      ["DHL eCommerce", { fr: "Bordereau UE standard", es: "Albarán UE estándar", en: "Standard EU waybill" }, { fr: "2 à 5 jours · standard", es: "2 a 5 días · estándar", en: "2 to 5 days · standard" }, "9,90 €"]
     ];
     return '<div class="tablewrap"><table><thead><tr><th>' + esc(t("ship.c.name")) + "</th><th>" + esc(t("ship.c.liquid")) + "</th><th>" + esc(t("ship.c.doc")) + "</th><th>" + esc(t("ship.c.time")) + "</th><th>" + esc(t("ship.c.price")) + "</th></tr></thead><tbody>" +
       rows.map(function (r) {

@@ -2,7 +2,7 @@
 window.I18N = {
   fr: {
     "lang.name": "Français",
-    "top.1": "Livraison en France en 2 à 5 jours · sans douane",
+    "top.1": "Livraison standard en France en 2 à 5 jours · sans douane",
     "top.2": "Port offert dès 49 €",
     "top.3": "Appellation d'Origine Protégée depuis 1981",
 
@@ -108,7 +108,7 @@ window.I18N = {
     "pdp.upsell.h": "Passez au coffret",
     "pdp.upsell.p": "Pour 23,10 € de plus, trois monovariétaux et la fiche de dégustation. C'est le produit que nos clients offrent le plus.",
     "pdp.cross.h": "On y ajoute souvent",
-    "pdp.ship.p": "Expédition depuis Cordoue sous 24 h ouvrées. Livraison en France métropolitaine en 2 à 5 jours selon le transporteur choisi, sans formalité douanière ni droits à payer : l'Espagne et la France sont dans le marché unique. Emballage renforcé avec calage antichoc et sachet anti-fuite pour le verre.",
+    "pdp.ship.p": "Expédition depuis Cordoue sous 24 h ouvrées. Livraison en France métropolitaine : 2 à 5 jours en standard (DHL eCommerce), 2 à 4 jours en express (MBE) et 5 à 9 jours avec l'option économique (Correos), sans formalité douanière ni droits à payer : l'Espagne et la France sont dans le marché unique. Emballage renforcé avec calage antichoc et sachet anti-fuite pour le verre.",
     "pdp.back": "Retour aux produits",
 
     "cart.title": "Panier",
@@ -323,7 +323,7 @@ window.I18N = {
 
   es: {
     "lang.name": "Español",
-    "top.1": "Entrega en Francia en 2–5 días · sin aduanas",
+    "top.1": "Entrega estándar en Francia en 2–5 días · sin aduanas",
     "top.2": "Envío gratis desde 49 €",
     "top.3": "Denominación de Origen Protegida desde 1981",
 
@@ -429,7 +429,7 @@ window.I18N = {
     "pdp.upsell.h": "Pasa al estuche",
     "pdp.upsell.p": "Por 23,10 € más, tres monovarietales y la ficha de cata. Es el producto que más regalan nuestros clientes.",
     "pdp.cross.h": "Se suele añadir",
-    "pdp.ship.p": "Salida desde Córdoba en 24 h laborables. Entrega en Francia peninsular en 2–5 días según transportista, sin trámite aduanero ni aranceles: España y Francia están en el mercado único. Embalaje reforzado con relleno antichoque y bolsa antifugas para el vidrio.",
+    "pdp.ship.p": "Salida desde Córdoba en 24 h laborables. Entrega en Francia peninsular: 2–5 días en estándar (DHL eCommerce), 2–4 días en exprés (MBE) y 5–9 días con la opción económica (Correos), sin trámite aduanero ni aranceles: España y Francia están en el mercado único. Embalaje reforzado con relleno antichoque y bolsa antifugas para el vidrio.",
     "pdp.back": "Volver a productos",
 
     "cart.title": "Carrito",
@@ -644,7 +644,7 @@ window.I18N = {
 
   en: {
     "lang.name": "English",
-    "top.1": "Delivery in France in 2–5 days · no customs",
+    "top.1": "Standard delivery in France in 2–5 days · no customs",
     "top.2": "Free shipping over €49",
     "top.3": "Protected Designation of Origin since 1981",
 
@@ -750,7 +750,7 @@ window.I18N = {
     "pdp.upsell.h": "Move up to the tasting box",
     "pdp.upsell.p": "For €23.10 more you get three single-varietal oils and the tasting sheet. It is the product our customers give away most.",
     "pdp.cross.h": "Often added",
-    "pdp.ship.p": "Dispatched from Córdoba within 24 working hours. Delivery in mainland France in 2–5 days depending on the carrier, with no customs formalities and no duty: Spain and France are in the single market. Reinforced packaging with shock padding and a leak-proof sleeve for glass.",
+    "pdp.ship.p": "Dispatched from Córdoba within 24 working hours. Delivery in mainland France: 2–5 days standard (DHL eCommerce), 2–4 days express (MBE) and 5–9 days with the economy option (Correos), with no customs formalities and no duty: Spain and France are in the single market. Reinforced packaging with shock padding and a leak-proof sleeve for glass.",
     "pdp.back": "Back to the shop",
 
     "cart.title": "Cart",
