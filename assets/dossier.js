@@ -42,24 +42,24 @@ window.DOSSIER = (function () {
   ];
 
   var TREE = [
-    ["Accueil", "#/", 0],
-    ["L'AOP Baena", "#/aop-baena", 1],
-    ["Produits", "#/produits", 1],
-    ["Sélection Classique", "#/produit/classique", 2],
-    ["Coffret Dégustation Premium", "#/produit/premium", 2],
-    ["Coffret Cadeau", "#/produit/cadeau", 2],
-    ["Bidon 5 L", "#/produit/bidon", 2],
-    ["Accessoires de dégustation", "#/produits", 2],
-    ["Recettes & Santé", "#/recettes", 1],
-    ["Oléotourisme", "#/oleotourisme", 1],
-    ["Livraison en France", "#/livraison", 1],
-    ["Espace Pro (B2B)", "#/pro", 1],
-    ["Panier", "#/panier", 1],
-    ["Commande — 3 étapes", "#/checkout", 2],
-    ["Mon compte", "#/compte", 1],
-    ["Mes commandes · Mes informations · Facturation · Préférences", "#/compte", 2],
-    ["Contact", "#/contact", 1],
-    ["Dossier du cas", "#/dossier", 1]
+    [x("Accueil", "Inicio", "Home"), "#/", 0],
+    [x("L'AOP Baena", "La DOP Baena", "The PDO"), "#/aop-baena", 1],
+    [x("Produits", "Productos", "Products"), "#/produits", 1],
+    [x("Sélection Classique", "Selección Clásica", "Classic Selection"), "#/produit/classique", 2],
+    [x("Coffret Dégustation Premium", "Estuche Cata Premium", "Premium Tasting Box"), "#/produit/premium", 2],
+    [x("Coffret Cadeau", "Kit de Regalo", "Gift Set"), "#/produit/cadeau", 2],
+    [x("Bidon 5 L", "Lata 5 L", "5 L Tin"), "#/produit/bidon", 2],
+    [x("Accessoires de dégustation", "Accesorios de cata", "Tasting accessories"), "#/produits", 2],
+    [x("Recettes & Santé", "Recetas y salud", "Recipes & Health"), "#/recettes", 1],
+    [x("Oléotourisme", "Oleoturismo", "Oleotourism"), "#/oleotourisme", 1],
+    [x("Livraison en France", "Envíos a Francia", "Delivery to France"), "#/livraison", 1],
+    [x("Espace Pro (B2B)", "Área Profesional (B2B)", "Trade area (B2B)"), "#/pro", 1],
+    [x("Panier", "Carrito", "Cart"), "#/panier", 1],
+    [x("Commande — 3 étapes", "Pedido — 3 pasos", "Checkout — 3 steps"), "#/checkout", 2],
+    [x("Mon compte", "Mi cuenta", "My account"), "#/compte", 1],
+    [x("Mes commandes · Mes informations · Facturation · Préférences", "Mis pedidos · Mis datos · Facturación · Preferencias", "My orders · My details · Billing · Preferences"), "#/compte", 2],
+    [x("Contact", "Contacto", "Contact"), "#/contact", 1],
+    [x("Dossier du cas", "Dossier del caso", "Case dossier"), "#/dossier", 1]
   ];
 
   var FORMS = [
@@ -157,7 +157,7 @@ window.DOSSIER = (function () {
       var mark = n[2] === 0 ? "" : (n[2] === 1 ? "└─ " : "  └─ ");
       return '<div style="padding-left:' + pad + 'px; font-size:.9rem">' +
         '<span class="muted">' + mark + '</span><a href="' + n[1] + '" style="text-decoration:none' +
-        (n[2] === 0 ? ";font-weight:700" : "") + '">' + esc(n[0]) + "</a></div>";
+        (n[2] === 0 ? ";font-weight:700" : "") + '">' + esc(L(n[0])) + "</a></div>";
     }).join("") + "</div></div>";
 
     var forms = '<div class="tablewrap"><table><thead><tr><th>' +
