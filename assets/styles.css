@@ -5,7 +5,7 @@
 :root{
   --bg:#F8F5EC; --surface:#FFFDF8; --surface-2:#F1F2E6;
   --sage-50:#F3F5EA; --sage-100:#E5EBD5; --sage-200:#CFDAB5; --sage-300:#B5C696;
-  --leaf:#8BA358; --olive:#5C7A2B; --olive-600:#4A6522; --deep:#26331A;
+  --leaf:#8BA358; --olive:#5C7A2B; --olive-600:#4A6522; --deep:#3A5121;
   --ink:#1F2614; --muted:#626951; --line:#E0DBC9; --line-2:#ECE7D7;
   --oil:#C89D25; --oil-soft:#F6E9BC; --berry:#6B3A55;
   --btn-ink:#FFFDF6; --good:#3F7A3A; --warn:#9A5A18;
@@ -19,20 +19,7 @@
   --page:1200px; --measure:66ch; --hdr:72px;
   --ease:cubic-bezier(.22,.8,.24,1);
 }
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#11150D; --surface:#181D12; --surface-2:#1F2617;
-    --sage-50:#1A2014; --sage-100:#222B19; --sage-200:#2F3B22; --sage-300:#46573A;
-    --leaf:#A4BE6E; --olive:#A6C46A; --olive-600:#BDD585; --deep:#0B0F08;
-    --ink:#EDEBDF; --muted:#A7AA94; --line:#2E3626; --line-2:#262D1F;
-    --oil:#E0BC52; --oil-soft:#3A3117; --berry:#C08AA4;
-    --btn-ink:#10150A; --good:#8CC27A; --warn:#E0A158;
-    --logo-drop:#A6C46A; --logo-leaf:#11150D; --logo-gold:#E0BC52;
-    --shadow-sm:0 1px 2px rgba(0,0,0,.4); --shadow:0 2px 8px rgba(0,0,0,.4), 0 14px 34px rgba(0,0,0,.35);
-    --shadow-lg:0 4px 12px rgba(0,0,0,.45), 0 28px 60px rgba(0,0,0,.45);
-    color-scheme:dark;
-  }
-}
+/* Light by default on every device. A dark palette is still available with data-theme="dark" on <html>. */
 :root[data-theme="dark"]{
   --bg:#11150D; --surface:#181D12; --surface-2:#1F2617;
   --sage-50:#1A2014; --sage-100:#222B19; --sage-200:#2F3B22; --sage-300:#46573A;
@@ -92,13 +79,13 @@ button{font:inherit; color:inherit}
 .tone-mint{--bg:#E6F0D2; background:var(--bg)}
 .tone-cream{--bg:#FAF7EE; background:var(--bg)}
 .tone-deep{
-  --bg:#2B3A1E; --surface:#34452A; --surface-2:#3B4D2F;
-  --sage-50:#34452A; --sage-100:#40542F; --sage-200:#4C6239; --sage-300:#647C4C;
-  --leaf:#B7CF84; --olive:#B9D47E; --olive-600:#CDE39A;
-  --ink:#F3F1E4; --muted:#C3C8AE; --line:#4A5C3A; --line-2:#3F5032;
-  --oil:#E6C25A; --oil-soft:#4A3F1C; --btn-ink:#1A240F;
-  --shadow-sm:0 1px 2px rgba(0,0,0,.25); --shadow:0 2px 8px rgba(0,0,0,.25), 0 14px 34px rgba(0,0,0,.22);
-  --shadow-lg:0 4px 12px rgba(0,0,0,.3), 0 28px 60px rgba(0,0,0,.3);
+  --bg:#4B6628; --surface:#587534; --surface-2:#5F7D39;
+  --sage-50:#587534; --sage-100:#668443; --sage-200:#729050; --sage-300:#8AA86A;
+  --leaf:#D4E6A5; --olive:#E3F0BE; --olive-600:#F1F8DA;
+  --ink:#FBFBF2; --muted:#E1EBCB; --line:#6D8B49; --line-2:#628040;
+  --oil:#F2D272; --oil-soft:#6B7A2A; --btn-ink:#233114;
+  --shadow-sm:0 1px 2px rgba(20,30,10,.2); --shadow:0 2px 8px rgba(20,30,10,.2), 0 14px 34px rgba(20,30,10,.16);
+  --shadow-lg:0 4px 12px rgba(20,30,10,.24), 0 28px 60px rgba(20,30,10,.22);
   background:var(--bg); color:var(--ink); color-scheme:dark;
 }
 .stack{display:flex; flex-direction:column}
@@ -635,7 +622,7 @@ tbody tr:last-child td{border-bottom:0}
 .month .d{font-size:.8rem; color:var(--muted); margin-top:4px}
 
 /* ---------------- footer ---------------- */
-.ftr{background:var(--deep); color:#E8E6D8; margin-top:auto; --logo-drop:#A6C46A; --logo-leaf:#26331A; --logo-gold:#E0BC52}
+.ftr{background:var(--deep); color:#E8E6D8; margin-top:auto; --logo-drop:#C9E08F; --logo-leaf:#3A5121; --logo-gold:#E8C867}
 .ftr .logo{color:#A6C46A}
 .ftr .logo-name{color:#F4F1E4}
 .ftr a{color:#E8E6D8; text-decoration:none; font-size:.88rem; opacity:.8; transition:opacity .2s, color .2s}
